@@ -1,0 +1,5 @@
+package github.com/pzel/packword64
+
+require {
+  github.com/pzel/assert 0.10.0 #117554f83f5d49448922d9216ba28fe863704d9e
+}

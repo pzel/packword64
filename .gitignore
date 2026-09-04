@@ -1,0 +1,8 @@
+bin/*
+lib/*
+!lib/github.com/
+lib/github.com/*
+!lib/github.com/pzel/
+lib/github.com/pzel/*
+!lib/github.com/pzel/packword64/
+!lib/github.com/pzel/packword64/**
