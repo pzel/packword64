@@ -1,22 +1,19 @@
 local
-structure V = Word8Vector;
-structure A = Word8Array;
+  structure V = Word8Vector;
+  structure A = Word8Array;
 
-fun op <<(a,b) : Word64.word =
-    Word64.<<(Word8.toLargeWord a, b)
+  fun op <<(a,b) : Word64.word =
+      Word64.<<(Word8.toLargeWord a, b)
 
-fun op <!<(a,b) : Word64.word =
-    Word64.<<(Word8.toLargeWordX a, b)
+  fun op <!<(a,b) : Word64.word =
+      Word64.<<(Word8.toLargeWordX a, b)
 
-fun op I(a,b) : Word64.word =
-    Word64.orb(a, b)
+  fun op I(a,b) : Word64.word =
+      Word64.orb(a, b)
 
-infix 4 << <!<
-infix 3 I
-val SIZE = 8
-fun x () = raise Fail "TODO"
-
-
+  infix 4 << <!<
+  infix 3 I
+  val SIZE = 8
 in
 
 structure PackWord64Big : PACK_WORD =
@@ -153,5 +150,5 @@ fun update(a: A.array, i : int, v: LargeWord.word) =
             Word8Array.update(a, i*SIZE+6, Word8.fromLargeWord(v >> 0w48));
             Word8Array.update(a, i*SIZE+7, Word8.fromLargeWord(v >> 0w56)))
          end;
-end
-end
+end (* struct *)
+end (* local *)
