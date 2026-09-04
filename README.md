@@ -1,7 +1,27 @@
 # PackWord64
 
-Provides  `structure PackWord64Big : PACK_WORD` and 
-`structure PackWord64Little : PACK_WORD` for your 64-bit word-packing needs.
+Provides the structures `PackWord64Big : PACK_WORD` and 
+`PackWord64Little : PACK_WORD` for your 64-bit word-packing needs.
+
+```
+signature PACK_WORD =
+sig
+
+  val bytesPerElem : int
+  val isBigEndian  : bool
+
+  val subVec       : Word8Vector.vector * int -> LargeWord.word
+  val subVecX      : Word8Vector.vector * int -> LargeWord.word
+
+
+  val subArr       : Word8Array.array * int -> LargeWord.word
+  val subArrX      : Word8Array.array * int -> LargeWord.word
+
+  val update       : Word8Array.array * int * LargeWord.word -> unit
+
+end;
+```
+
 
 No AIs were used (or harmed) during the making of this source code.
 
